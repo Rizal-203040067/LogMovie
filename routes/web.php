@@ -17,7 +17,7 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('sort');
+    return view('dashboard');
 });
 
 Route::get('/logout', function () {
