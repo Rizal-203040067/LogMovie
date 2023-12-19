@@ -2,7 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ActorController;
+use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\DeleteAccountController;
+
 use Laravel\Socialite\Facades\Socialite;
 
 /*
@@ -21,6 +26,7 @@ Route::get('/', function () {
 });
 
 
+//Authentication
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
@@ -28,6 +34,27 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [registerController::class, 'store']);
 
 Route::get('/logout', [LoginController::class, 'logout']);
- 
+
+Route::get('/password/update', [PasswordController::class, 'index']);
+Route::post('/password/update', [PasswordController::class, 'update'])->name('password.update');
+
+
+Route::get('/account/delete', [DeleteAccountController::class, 'index'])->name('account.delete.form');
+Route::delete('/account/delete', [DeleteAccountController::class, 'destroy'])->name('account.delete');
+
+
+//Authentication google
 Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name('google.redirect');
-Route::get('/google/redirect', [LoginController::class, 'handleGoogleCallback'])->name('login')->middleware('guest');
+Route::get('/google/redirect', [LoginController::class, 'handleGoogleCallback'])->name('login');
+
+//API TMDB MOVIE
+Route::get('/movies', [MoviesController::class, 'index'])->middleware('auth');
+Route::get('/movies/{id}', [MoviesController::class, 'show'])->name('movies.show');
+
+Route::get('/movies/{movieId}/videos', [MoviesController::class, 'video']);
+
+Route::get('/actors', [ActorController::class, 'index']);
+Route::get('/actors/{id}', [ActorController::class, 'show'])->name('actors.show');
+
+//Search
+Route::get('/movies/search', [MoviesController::class, 'search'])->name('search');
