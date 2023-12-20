@@ -1,10 +1,10 @@
 <?php
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\ActorController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\DeleteAccountController;
 
@@ -50,11 +50,3 @@ Route::get('/google/redirect', [LoginController::class, 'handleGoogleCallback'])
 //API TMDB MOVIE
 Route::get('/movies', [MoviesController::class, 'index']);
 Route::get('/movies/{id}', [MoviesController::class, 'show'])->name('movies.show');
-
-Route::get('/movies/{movieId}/videos', [MoviesController::class, 'video']);
-
-Route::get('/actors', [ActorController::class, 'index']);
-Route::get('/actors/{id}', [ActorController::class, 'show'])->name('actors.show');
-
-//Search
-Route::get('/movies/search', [MoviesController::class, 'search'])->name('search');
