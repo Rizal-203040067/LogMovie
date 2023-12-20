@@ -36,6 +36,12 @@ return [
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT'),
     ],
+
+    'tmdb' => [
+        'endpoint' => env('TMDB_ENDPOINT'),
+        'api_token' => env('TMDB_API_TOKEN'),
+        'api_key' => env('TMDB_API_KEY'),
+    ],
     
 
 ];

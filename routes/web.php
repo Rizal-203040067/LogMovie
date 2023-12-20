@@ -48,7 +48,7 @@ Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name(
 Route::get('/google/redirect', [LoginController::class, 'handleGoogleCallback'])->name('login');
 
 //API TMDB MOVIE
-Route::get('/movies', [MoviesController::class, 'index'])->middleware('auth');
+Route::get('/movies', [MoviesController::class, 'index']);
 Route::get('/movies/{id}', [MoviesController::class, 'show'])->name('movies.show');
 
 Route::get('/movies/{movieId}/videos', [MoviesController::class, 'video']);

@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+
 
 class LoginController extends Controller
 {
@@ -23,10 +24,13 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
+        // Contoh penggunaan remember me pada saat login
+        
+        
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/movies');
+            
         }
         return back()->with('loginError', 'Login Failed!');
     }
@@ -46,23 +50,22 @@ class LoginController extends Controller
     }
 
     public function handleGoogleCallback()
-    {
-        $googleUser = Socialite::driver('google')->stateless()->user();
+{
+    $googleUser = Socialite::driver('google')->stateless()->user();
 
-        $existingUser = User::where('email', $googleUser->email)->first();
-        if (!$existingUser) {
-        $user = User::updateOrInsert(['google_id' => $googleUser->id],
-        [
-            'name' => $googleUser->name,
-            'email' => $googleUser->email,
-            'email_verified_at' => now(),
-            'password' => Hash::make('12345'),
-        ]);
+    $user = User::firstOrNew(['email' => $googleUser->email]);
+
+    if (!$user->exists) {
+        // Jika pengguna belum terdaftar, daftarkan mereka
+        $user->name = $googleUser->name;
+        $user->email = $googleUser->email;
+        $user->email_verified_at = now();
+        $user->password = Hash::make(Str::random(16)); // Gunakan password acak atau metode lain
+        $user->save();
     }
 
-        $user = User::where('email', $googleUser->email)->first();
-        Auth::login($user, true);
+    Auth::login($user, true);
 
-        return redirect('/');
-    }
+    return redirect('/movies');
+    }  
 }
