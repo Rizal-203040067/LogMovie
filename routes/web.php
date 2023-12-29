@@ -29,6 +29,10 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/detail', function () {
+    return view('detail');
+});
+
 Route::get('/logout', function () {
     return view('google');
 });
