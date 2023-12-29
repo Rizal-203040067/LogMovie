@@ -157,6 +157,7 @@
               </a>
             </h2>
             <div class="background" style="left: 0px; width: 81.5938px">
+            </div>
           </div>
         </div>
         <div class="anchor">
@@ -166,7 +167,11 @@
               <span class="glyphicons_v2 chevron-down"></span>
             </a>
           </h2>
+        </div>
       </div>
+
+</head>
+
 
 <br>
 </head>
