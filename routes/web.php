@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('sort');
 });
 
+Route::get('/detail', function () {
+    return view('detail');
+});
+
 Route::get('/logout', function () {
     return view('google');
 });
