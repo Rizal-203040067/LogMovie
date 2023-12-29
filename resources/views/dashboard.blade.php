@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
-    @vite('resources/css/app.css')
-</head>
-<body>
-    <!--
-  This example requires some changes to your config:
+@extends('layouts.main')
 
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-<!--
-  This example requires updating your template:
+@section('container')
 
-  ```
-  <html class="h-full bg-white">
-  <body class="h-full">
-  ```
--->
 <nav class="bg-emerald-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -64,17 +35,10 @@
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-emerald-900 text-white", Default: "text-emerald-300 hover:bg-emerald-700 hover:text-white" -->
-<<<<<<< HEAD
-            <a href="#" class="bg-emerald-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
-            <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
-            <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-            <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
-=======
             <a href="#" class="bg-emerald-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Movies</a>
             <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Tv Show</a>
             <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">People</a>
             <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">More</a>
->>>>>>> origin/fredi
           </div>
         </div>
       </div>
@@ -386,7 +350,6 @@
       </div>
     </div>
   </div>
-
 </main>
-</body>
-</html>
+
+@endsection

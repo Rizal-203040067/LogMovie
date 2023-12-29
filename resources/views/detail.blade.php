@@ -1,48 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>Details</title>
-    <link rel="stylesheet" href="css/style.css">
-    @vite('resources/css/app.css')
-    <!-- stylesheet -->
-<link
-rel="stylesheet"
-href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
-/>
+@extends('layouts.main')
 
-    <style>
-           .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-    <!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-<!--
-  This example requires updating your template:
+@section('container')
 
-  ```
-  <html class="h-full bg-white">
-  <body class="h-full">
-  ```
--->
 <nav class="bg-emerald-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -422,10 +381,4 @@ href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.
   </aside>
 </div>
 
-
-<script src="js/script.js"></script>
-<!-- Ripple Effect from cdn -->
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
-
-</body>
-</html>
+@endsection

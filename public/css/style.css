@@ -1,11 +1,4 @@
-.cobabtn {
-
-}
-
-.cobabtn:after {
-  
-}
-
-.cobabtn:active:after {
-
+/* Dropdown Detail */
+.dropdown:hover .dropdown-menu {
+    display: block;
 }

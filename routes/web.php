@@ -26,15 +26,24 @@ use App\Http\Controllers\RegisterController;
 
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('dashboard', [
+        "title" => "Dashboard",
+        "active" => 'dashboard',
+    ]);
 });
 
 Route::get('/detail', function () {
-    return view('detail');
+    return view('detail', [
+        "title" => "Detail",
+        "active" => 'detail',
+    ]);
 });
 
 Route::get('/logout', function () {
-    return view('google');
+    return view('google', [
+        "title" => "Logout",
+        "active" => 'logout',
+    ]);
 });
 
 Route::get('/sort', function () {
