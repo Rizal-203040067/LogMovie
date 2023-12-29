@@ -1,3 +1,14 @@
+function hide_profile() {
+    tampil = Boolean;
+    tampil = document.getElementById("drop-profile").classList.contains("hidden");
+
+    if (tampil == true) {
+        document.getElementById("drop-profile").classList.remove("hidden");
+    } else {
+        document.getElementById("drop-profile").classList.add("hidden");
+    }
+}
+
 function hide_input() {
     tampil = Boolean;
     tampil = document.getElementById("items-button").classList.contains("hidden");
