@@ -1,19 +1,17 @@
 <?php
 
-<<<<<<< HEAD
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-=======
-// use App\Http\Controllers\GetImagesController;
 
+// Bagian Rizal FE
+// use App\Http\Controllers\GetImagesController;
 // use App\Models\Post;
-use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\PostController;
 // use App\Models\Category;
 // use App\Models\User;
->>>>>>> rizal
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,13 +26,20 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return view('dashboard');
 });
 
 Route::get('/logout', function () {
     return view('google');
 });
+
+Route::get('/sort', function () {
+    return view ('sort', [
+        "title" => "Sort",
+        "active" => 'sort',
+    ]);
+});
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -45,13 +50,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name('google.redirect');;
 Route::get('/google/redirect', [LoginController::class, 'handleGoogleCallback'])->name('google.callback');
 
-=======
-    return view ('sort', [
-        "title" => "Sort",
-        "active" => 'sort'
-    ]);
-});
-
+// Bagian Rizal FE
 // Route::get('/about', function () {
 //     return view ('about', [
 //         "title" => "About",
@@ -73,6 +72,7 @@ Route::get('/google/redirect', [LoginController::class, 'handleGoogleCallback'])
 //     ]);
 // });
 
-// untuk menampilkan gambar pada posts
-// Route::get('/storage/post-images/{filename}', [GetImagesController::class, 'displayImage']) -> name('image.displayImage');
->>>>>>> rizal
+
+
+
+
