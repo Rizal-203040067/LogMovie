@@ -128,16 +128,6 @@
       <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
     </div>
   </div>
-<<<<<<< HEAD
-</nav>
-
-<head>
-
-</head>
-
-<div>
-    <h1>Watch Popular</h1>
-=======
 <section class="inner_content_new_index">
   <div id="media_v4" class="media discoverx">
     <div class="column_wrapoer">
@@ -195,7 +185,6 @@
 
 <main>
   <section>
->>>>>>> origin/fredi
     <div class="flex overflow-x-scroll">
         <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
         <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
@@ -206,10 +195,6 @@
         <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
         <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
     </div>
-<<<<<<< HEAD
-</div>
-
-=======
   </section>
 
   <br>
@@ -403,6 +388,5 @@
   </div>
 
 </main>
->>>>>>> origin/fredi
 </body>
 </html>
