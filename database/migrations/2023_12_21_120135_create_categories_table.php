@@ -11,21 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movies', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
             $table->string('slug')->unique();
-            $table->text('overview');
-            $table->float('popularity');
-            $table->string('poster_path');
-            $table->string('backdrop_path');
-            $table->string('release_date');
-            $table->foreignId('category_id');
             $table->timestamps();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('movies');
+        Schema::dropIfExists('categories');
     }
 };

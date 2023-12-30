@@ -24,12 +24,10 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-        // Contoh penggunaan remember me pada saat login
-        
         
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/movies');
+            return redirect()->intended('/dashboard');
             
         }
         return back()->with('loginError', 'Login Failed!');
@@ -66,6 +64,6 @@ class LoginController extends Controller
 
     Auth::login($user, true);
 
-    return redirect('/movies');
+    return redirect('/');
     }  
 }

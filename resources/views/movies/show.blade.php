@@ -6,35 +6,14 @@
     <title>Movies</title>
 </head>
 <body>
-<h2>{{ $movie['title'] }}</h2>
-    <div>
-        <p>{{ $movie['overview'] }}</p>
-        <p>Tanggal Rilis: {{ $movie['release_date'] }}</p>
-        <p>Nilai Rata-rata: {{ $movie['vote_average'] }}</p>
-        <p>Genres: 
-            @if(isset($movie['genres']))
-                @foreach($movie['genres'] as $genre)
-                    {{ $genre['name'] }}
-                    @if(!$loop->last)
-                        ,
-                    @endif
-                @endforeach
-            @endif
-        </p>
-
-        <!-- Anda dapat menambahkan lebih banyak detail sesuai kebutuhan -->
-
-        @if(isset($movie['videos']['results']) && count($movie['videos']['results']) > 0)
-        <h3>Video</h3>
-        <ul>
-            @foreach($movie['videos']['results'] as $video)
-            <li>
-                        <iframe width="360" height="215" src="https://www.youtube.com/embed/{{ $video['key'] }}" frameborder="0" allowfullscreen></iframe>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        @endif
-    </div>
+    <a href="/movie/{{ $movie->slug }}">{{ $movie->title }}</a>
+    <a href="/movie?category={{ $movie->category->name}}" class="text-decoration-none">{{ $movie->category->name}}</a>
+    <p>{{ $movie->overview }}</p>
+    <p>{{ $movie->popularity }}</p>
+    @if ($movie->poster_path || Storage::exists('public/' . $movie->poster_path))
+        <img src="{{ asset('storage/' . $movie->poster_path) }}" alt="{{ $movie->title }}" class="img-fluid">
+    @else
+        <img src="https://image.tmdb.org/t/p/w200/{{ $movie->poster_path }}" alt="{{ $movie->title }}">
+    @endif
 </body>
 </html>
