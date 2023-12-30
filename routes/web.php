@@ -5,6 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
+// Bagian Rizal FE
+// use App\Http\Controllers\GetImagesController;
+// use App\Models\Post;
+// use App\Http\Controllers\PostController;
+// use App\Models\Category;
+// use App\Models\User;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,17 +24,35 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
+
 Route::get('/', function () {
-    return view('sort');
+    return view('dashboard', [
+        "title" => "Dashboard",
+        "active" => 'dashboard',
+    ]);
 });
 
 Route::get('/detail', function () {
-    return view('detail');
+    return view('detail', [
+        "title" => "Detail",
+        "active" => 'detail',
+    ]);
 });
 
 Route::get('/logout', function () {
-    return view('google');
+    return view('google', [
+        "title" => "Logout",
+        "active" => 'logout',
+    ]);
 });
+
+Route::get('/sort', function () {
+    return view ('sort', [
+        "title" => "Sort",
+        "active" => 'sort',
+    ]);
+});
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -36,4 +62,30 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name('google.redirect');;
 Route::get('/google/redirect', [LoginController::class, 'handleGoogleCallback'])->name('google.callback');
+
+// Bagian Rizal FE
+// Route::get('/about', function () {
+//     return view ('about', [
+//         "title" => "About",
+//         "active" => 'about',
+//         "name" => "Rizal Baihaqi",
+//         "email" => "203040067@mail.unpas.ac.id",
+//         "image" => "rizal.jpg"
+//     ]);
+// });
+
+// Route::get('/posts', [PostController::class, 'index']);
+// Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+
+// Route::get('/categories', function() {
+//     return view('categories', [
+//         'title' => 'Post Categories',
+//         "active" => 'categories',
+//         'categories' => Category::all()
+//     ]);
+// });
+
+
+
+
 
