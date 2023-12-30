@@ -7,7 +7,8 @@
       <title>Log Movies | {{ $title }}</title>
       <link rel="stylesheet" href="css/style.css">
       @vite('resources/css/app.css')
-      <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"/>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
+      {{-- <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"/> --}}
   </head>
   <body>
 
@@ -21,5 +22,6 @@
 
     <!-- Ripple Effect from cdn -->
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   </body>
 </html>

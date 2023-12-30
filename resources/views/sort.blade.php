@@ -16,7 +16,7 @@
         </button>
       </div>
 
-      <div class="hidden right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" id="items-button" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+      <div class="hidden right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-white shadow-lg" id="items-button" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
         <legend>Show Me</legend>
           
         <input id="everything" class="peer/everything" type="radio" name="status" checked />
@@ -49,7 +49,7 @@
       </button>
     </div>
 
-    <div class="right-0 z-10 mt-2 w-auto origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" id="items-button2" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="right-0 z-10 mt-2 w-auto origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg" id="items-button2" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
       <div class="py-1" role="none">
         <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
         <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Edit</a>
