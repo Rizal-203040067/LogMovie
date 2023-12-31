@@ -13,6 +13,14 @@ use App\Models\Category;
 use Laravel\Socialite\Facades\Socialite;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
+// Bagian Rizal FE
+// use App\Http\Controllers\GetImagesController;
+// use App\Models\Post;
+// use App\Http\Controllers\PostController;
+// use App\Models\Category;
+// use App\Models\User;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +32,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
+
 // Route::get('/dashboard', function() {
 //     return view('dashboard.index');
 // })->middleware('auth');
@@ -31,6 +40,35 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 //Authentication
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/', function () {
+    return view('dashboard', [
+        "title" => "Dashboard",
+        "active" => 'dashboard',
+    ]);
+});
+
+Route::get('/detail', function () {
+    return view('detail', [
+        "title" => "Detail",
+        "active" => 'detail',
+    ]);
+});
+
+Route::get('/logout', function () {
+    return view('google', [
+        "title" => "Logout",
+        "active" => 'logout',
+    ]);
+});
+
+Route::get('/sort', function () {
+    return view ('sort', [
+        "title" => "Sort",
+        "active" => 'sort',
+    ]);
+});
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
