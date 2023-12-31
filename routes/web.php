@@ -39,34 +39,34 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 //Authentication
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::get('/', function () {
-    return view('dashboard', [
-        "title" => "Dashboard",
-        "active" => 'dashboard',
-    ]);
-});
+// Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+// Route::get('/', function () {
+//     return view('dashboard', [
+//         "title" => "Dashboard",
+//         "active" => 'dashboard',
+//     ]);
+// });
 
-Route::get('/detail', function () {
-    return view('detail', [
-        "title" => "Detail",
-        "active" => 'detail',
-    ]);
-});
+// Route::get('/detail', function () {
+//     return view('detail', [
+//         "title" => "Detail",
+//         "active" => 'detail',
+//     ]);
+// });
 
-Route::get('/logout', function () {
-    return view('google', [
-        "title" => "Logout",
-        "active" => 'logout',
-    ]);
-});
+// Route::get('/logout', function () {
+//     return view('google', [
+//         "title" => "Logout",
+//         "active" => 'logout',
+//     ]);
+// });
 
-Route::get('/sort', function () {
-    return view ('sort', [
-        "title" => "Sort",
-        "active" => 'sort',
-    ]);
-});
+// Route::get('/sort', function () {
+//     return view ('sort', [
+//         "title" => "Sort",
+//         "active" => 'sort',
+//     ]);
+// });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -100,8 +100,8 @@ Route::get('/categories/{category:slug}', function(Category $category){
 
 //dashboard
 // web.php
-Route::get('/dashboard/checkSlug', [DashboardController::class, 'checkSlug'])->middleware('auth');
-//Route::get('/dashboard/{movie:slug}/edit', [DashboardController::class, 'edit'])->name('dashboard.edit');
+// Route::get('/dashboard/checkSlug', [DashboardController::class, 'checkSlug'])->middleware('auth');
+// //Route::get('/dashboard/{movie:slug}/edit', [DashboardController::class, 'edit'])->name('dashboard.edit');
 Route::resource('/dashboard', DashboardController::class)->middleware('auth');
 
 

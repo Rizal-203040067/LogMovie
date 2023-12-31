@@ -12,7 +12,6 @@ class RegisterController extends Controller
     {
         return view('register.index', [
             'title' => 'Register',
-            'active' => 'register'
         ]);
     }
     
@@ -26,7 +25,6 @@ class RegisterController extends Controller
         $validateData['password'] = Hash::make($validateData['password']);
 
         User::create($validateData);
-
         return redirect('/login')->with('success', 'Registration success! Please Login');
     }
 }

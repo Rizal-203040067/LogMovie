@@ -20,7 +20,7 @@ class DashboardController extends Controller
         // $userId = auth()->user()->id;
         // // Menampilkan daftar film yang dimiliki oleh pengguna yang sedang login
         // $movies = Movie::where('user_id', auth()->user()->id)->get();
-        return view('dashboard.index', compact('movies'));
+        return view('sort', compact('movies'));
     }
 
     /**

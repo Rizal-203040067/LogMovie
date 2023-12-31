@@ -2,11 +2,11 @@
 
 @section('container')
 <head>
-  
   <h1>Welcome</h1>
   <h2>Millions of movies in all time is ready to discover. Explore now.</h2>
 
-  <form>   
+  <form>
+    @csrf
       <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
       <div class="relative">
           <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -36,47 +36,6 @@
     </div>
   </section>
 
-  <section>
-    <h1>Trending</h1>
-    <div class="flex overflow-x-scroll">
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-    </div>
-  </section>
-
-  <section>
-    <h1>Trending</h1>
-    <div class="flex overflow-x-scroll">
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-    </div>
-  </section>
-
-  <section>
-    <h1>Trending</h1>
-    <div class="flex overflow-x-scroll">
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-        <img class="w-60 mr-2 " src="https://www.themoviedb.org/t/p/original/l2bqoY9rgPAgugPkOTowIPIv61j.jpg" alt="" >
-    </div>
-  </section>
 
   <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
     <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
@@ -99,5 +58,40 @@
     </div>
   </div>
 </main>
+
+<body class="bg-gray-100 font-sans">
+
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-semibold mb-8">Movie Database</h1>
+
+        <!-- Movie Card -->
+        <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4">
+            <img class="w-full h-64 object-cover" src="https://placekitten.com/640/360" alt="Movie Poster">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Movie Title</div>
+                <p class="text-gray-700 text-base">Movie description goes here. Lorem ipsum dolor sit amet,
+                    consectetur
+                    adipiscing elit.</p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Genre
+                    1</span>
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Genre
+                    2</span>
+                <!-- Add more genres as needed -->
+            </div>
+        </div>
+        <!-- End Movie Card -->
+
+        <!-- Add more movie cards as needed -->
+
+    </div>
+
+</body>
+
+</html>
+
 
 @endsection
