@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Movie;
+use Illuminate\Support\Facades\Http;
 
 class MoviesController extends Controller
 {
@@ -10,6 +11,22 @@ class MoviesController extends Controller
         return view('movies.index', [
             "movies" => Movie::latest()->filter(request(['search']))->get(),
         ]);
+    }
+    public function sort()
+    {
+        $movies = Movie::latest()
+        ->filter(request(['search']))
+        ->when(request()->has('sort'), function ($query) {
+            // Tambahkan logic sortir sesuai kebutuhan
+            $sortField = request('sort', 'title');
+            $sortDirection = request('direction', 'asc');
+            $sortDirection = request('direction', 'asc');
+
+            return $query->orderBy($sortField, $sortDirection);
+        })
+        ->get();
+
+        return view('movies.sort', compact('movies'));
     }
 
     public function show(Movie $movie)
@@ -21,5 +38,5 @@ class MoviesController extends Controller
     ]);
         
     }
-    
+ 
 }

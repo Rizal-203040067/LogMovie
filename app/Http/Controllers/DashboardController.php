@@ -15,12 +15,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
-        
+        $movies = Movie::paginate(5);
+
         // $userId = auth()->user()->id;
         // // Menampilkan daftar film yang dimiliki oleh pengguna yang sedang login
         // $movies = Movie::where('user_id', auth()->user()->id)->get();
-        return view('sort', compact('movies'));
+        return view('dashboard.index', compact('movies'));
     }
 
     /**

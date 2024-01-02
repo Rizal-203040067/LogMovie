@@ -1,1 +1,1 @@
-<a href="{{ url('/logout') }}">logout</a>
+<h1>dandy</h1>

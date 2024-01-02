@@ -1,16 +1,18 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Models\Category;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TmdbController;
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\ActorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeleteAccountController;
-use App\Models\Category;
-use Laravel\Socialite\Facades\Socialite;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // Bagian Rizal FE
@@ -32,42 +34,6 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-
-// Route::get('/dashboard', function() {
-//     return view('dashboard.index');
-// })->middleware('auth');
-
-
-//Authentication
-// Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-// Route::get('/', function () {
-//     return view('dashboard', [
-//         "title" => "Dashboard",
-//         "active" => 'dashboard',
-//     ]);
-// });
-
-// Route::get('/detail', function () {
-//     return view('detail', [
-//         "title" => "Detail",
-//         "active" => 'detail',
-//     ]);
-// });
-
-// Route::get('/logout', function () {
-//     return view('google', [
-//         "title" => "Logout",
-//         "active" => 'logout',
-//     ]);
-// });
-
-// Route::get('/sort', function () {
-//     return view ('sort', [
-//         "title" => "Sort",
-//         "active" => 'sort',
-//     ]);
-// });
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
@@ -86,17 +52,23 @@ Route::delete('/account/delete', [DeleteAccountController::class, 'destroy'])->n
 Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name('google.redirect');
 Route::get('/google/redirect', [LoginController::class, 'handleGoogleCallback'])->name('login');
 
-//API MOVIE
+
 Route::get('/', [MoviesController::class, 'index']);
+Route::get('/movie', [MoviesController::class, 'sort'])->name('movies.sort');
 Route::get('/movie/{movie:slug}', [MoviesController::class, 'show'])->name('movies.show');
 
+
+//TMDB
+Route::get('/film', [TmdbController::class], 'index');
+Route::get('/film/{movie:slug}', [TmdbController::class], 'show');
+// routes/web.php
+Route::get('/actor/{actorId}', [ActorController::class], 'getActorInfo')->name('actors.index');;
+Route::get('/actor', [ActorController::class, 'getAllActors'])->name('actors.index');;
+
+
 //Category
-Route::get('/categories/{category:slug}', function(Category $category){
-    return view('category', [
-        'title' => $category->name,
-        'movie' => $category->movie,
-    ]);
-});
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category', [CategoryController::class, 'show'])->name('movies.categories');
 
 //dashboard
 // web.php

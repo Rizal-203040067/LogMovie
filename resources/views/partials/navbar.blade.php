@@ -1,4 +1,4 @@
-<nav class="bg-emerald-800">
+<nav class="bg-emerald-800 relative z-50">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -25,19 +25,38 @@
           </button>
         </div>
         <div class="flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex flex-shrink-0 items-center">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
-          </div>
           <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
+            <div class="flex items-center justify-between">
               <!-- Current: "bg-emerald-900 text-white", Default: "text-emerald-300 hover:bg-emerald-700 hover:text-white" -->
-              <a href="#" class="bg-emerald-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
-              <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
-              <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-              <a href="#" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
+              <a href='/'> <img src='https://i.postimg.cc/7C3qtLGn/Logmovie.png' class="w-[150px] mr-10" border='0' alt='Logmovie'></a>
+              <a href="/movie" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Movie</a>
+              <a href="/actor" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Actor</a>
+              @auth
+              <div x-data="{ open: false }" class="relative ml-auto">
+                <button @click="open = !open" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium focus:outline-none">
+                    {{ Auth::user()->name }}
+                </button>
+                <ul x-show="open" class="absolute bg-white border rounded-md mt-2 text-gray-800">
+                    <li>
+                        <a href="/dashboard" class="block px-4 py-2">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/change-password" class="block px-4 py-2">Ganti Password</a>
+                    </li>
+                    <li>
+                      <a href="{{ url('/logout') }}" class="block px-4 py-2">logout</a>
+                    </li>
+                    <li>
+                      <a class="block px-4 py-2" href="{{ route('account.delete.form') }}">Hapus Account</a>
+                    </li>
+                </ul>
+            </div>
+          @else
+              <a href="/login" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
+          @endauth
+        </div>
             </div>
           </div>
-          <a href="{{ url('/login')}}">Login</a>
         </div>
       </div>
     </div>
@@ -53,3 +72,14 @@
       </div>
     </div>
 </nav>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Inisialisasi Alpine.js
+        Alpine.start();
+    });
+</script>
+
+
