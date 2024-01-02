@@ -115,20 +115,6 @@
             </div>
         </div>
     </div>    
-    
-        
-          
-        </div>
-    </div>
-    
-    
-              
-                        
-            <!-- More products... -->
-          </div>
-        </div>
-      </div>
-    </div>
   </main>
 </section>
 

@@ -22,9 +22,9 @@
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 @csrf
-<body class="font-sans bg-gray-900 text-white">
+{{-- <body class="font-sans bg-gray-900 text-white">
     <nav class="border-b border-gray-800">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between px-4 py-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-6">
             <ul class="flex flex-col md:flex-row items-center">
                 <li>
                     <a href="{{ url('movies.index') }}">
@@ -41,13 +41,8 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> --}}
     @yield('content')
-    <footer class="border border-t border-gray-800">
-        <div class="container mx-auto text-sm px-4 py-6">
-            Powered by <a href="https://www.themoviedb.org/documentation/api" class="underline hover:text-gray-300">TMDb API</a>
-        </div>
-    </footer>
     <livewire:scripts>
     @yield('scripts')
 </body>
