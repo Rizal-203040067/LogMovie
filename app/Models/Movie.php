@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Movie extends Model
 {
     use HasFactory, Sluggable;
+    
     protected $fillable = [
         'title', 'slug', 'overview', 'popularity', 'poster_path', 'backdrop_path', 'release_date', 'category_id'
     ];
@@ -18,7 +20,7 @@ class Movie extends Model
     public function scopeFilter($query, array $filters){
         if (isset($filters['search']) ? $filters['search'] : false) {
             return $query->where('title', 'like', '%' . request('search') . '%')
-            ->orWhere('overview', 'release_date', '%' . request('search') . '%');
+            ->orWhere('overview','title', 'release_date', '%' . request('search') . '%');
         }
     }
 

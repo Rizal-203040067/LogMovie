@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('container')
+
 <head>
 {{-- Section --}}
 
@@ -27,8 +28,8 @@
           {{ strftime('%e %B %Y', strtotime($movie->release_date)) }}
         </h3>   
         <button class="bg-transparen rounden-full border-2 middle m-3 none center mr-4 rounded-xl px-2 shadow-md transition-all"  data-ripple-light="true">
-      <a href="/movie?category={{ $movie->category->name}}" class="text-gega-melon text-white text-sm ">{{ $movie->category->name}}</a>
-    </button>       
+          <a href="/movie?category={{ $movie->category->name}}" class="text-gega-melon text-white text-sm ">{{ $movie->category->name}}</a>
+        </button>       
 
         </h3>   
         <h2 class="font-bold text-gega-melon-10 tracking-wider group-hover:mb-1 duration-500">Overview :</h2>     
@@ -51,34 +52,31 @@
 
 </section>
 
-
-
 {{-- Description --}}
 <section class="flex flex-row-reverse mx-6 space-x-6 pb-6">
   <div class="basis-3/12 space-y-6">
     <div class="px-4 m-auto mt-10">
-        <h1 class="text-left font-semibold text-4xl">Description</h1>
+        <h1 class="text-left font-semibold text-3xl">Description</h1>
         <ul class="overflow-hidden mt-5">
-            <li class="px-4 py-2 bg-white  hover:text-sky-900 last:border-none transition-all duration-300 ease-in-out font-bold">Aktor</li>
-            <li class="px-4 py-2 bg-white  hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">Sofia Boutella, Michiel Huisman, Ed Skrein, Djimon Hounsou, Bae Doona, Staz Nair, Charlie Hunnam, Ray Fisher, Cleopatra Coleman, Anthony Hopkins, Fra Fee, E. Duffy, Jena Malone, Rhian Rees, Alfonso Herrera, Cary Elwes</li>
-            <li class="px-4 py-2 bg-white  hover:text-sky-900  last:border-none border-gray-200 transition-all duration-300 ease-in-out font-semibold">Sutradara</li>
-            <li class="px-4 py-2 bg-white  hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">Zack Snyder</li>
-            <li class="px-4 py-2 bg-white  hover:text-sky-900  last:border-none border-gray-200 transition-all duration-300 ease-in-out font-bold">Studio</li>
-            <li class="px-4 py-2 bg-white  hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">Grand Electric · The Stone Quarry</li>
-            <li class="px-4 py-2 bg-white  hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out"></li>
+            <li class="px-4 py-2 hover:text-sky-900 last:border-none transition-all duration-300 ease-in-out font-bold">Aktor</li>
+            <li class="px-4 py-2 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">Sofia Boutella, Michiel Huisman, Ed Skrein, Djimon Hounsou, Bae Doona, Staz Nair, Charlie Hunnam, Ray Fisher, Cleopatra Coleman, Anthony Hopkins, Fra Fee, E. Duffy, Jena Malone, Rhian Rees, Alfonso Herrera, Cary Elwes</li>
+            <li class="px-4 py-2 hover:text-sky-900  last:border-none border-gray-200 transition-all duration-300 ease-in-out font-semibold">Sutradara</li>
+            <li class="px-4 py-2 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">Zack Snyder</li>
+            <li class="px-4 py-2 hover:text-sky-900  last:border-none border-gray-200 transition-all duration-300 ease-in-out font-bold">Studio</li>
+            <li class="px-4 py-2 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">Grand Electric · The Stone Quarry</li>
+            <li class="px-4 py-2 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out"></li>
         </ul>
     </div>
 
   {{-- Category --}}
-
+  
     <div class="px-1 space-x-20">
       <h1 class="text-4xl lg:text-2xl text-gega-grey group-hover:mb-1 duration-500 mt-3 mb-5 ml-3 font-semibold ">
         Category
       </h1>
     </div>
-    <button class="middle none center ml-6 mr-4 rounded-lg bg-gray-300  py-3 px-6 font-sans text-xs text-black transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-      data-ripple-light="true">
-      Action
+    <button class="bg-transparen rounden-full border-2 middle m-3 none center mr-4 rounded-xl px-2 shadow-md transition-all"  data-ripple-light="true">
+      <a href="/category={{ $movie->category->name}}" class="text-gega-melon text-white text-sm ">{{ $movie->category->name}}</a>
     </button>
     <button class="middle none center mr-4 rounded-lg bg-gray-300 py-3 px-6 font-sans text-xs  text-black shadow-md transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       data-ripple-light="true">
@@ -99,27 +97,36 @@
   </div>
   
   <main class="basis-9/12 gap-6">
-    <div class="mt-12 border-t-2 dark:border-gray-200">
+    <div class="mt-10 border-t-2 dark:border-gray-200">
       {{-- Trailler --}}
-      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h1 class="text-left mb-10 font-semibold text-3xl">Movie</h1>
-            <div class="flex gap-4">
-                @foreach ($movies as $movie) 
-                    <div class="group relative">
-                        <img src="https://www.themoviedb.org/t/p/original/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class="h-98 w-full rounded-md object-cover object-center">
-                        <div class="mt-3">
-                            <p class="text-sm text-white">{{ $movie->title }}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h1 class="text-left mb-4 font-semibold text-3xl">Movie</h1>
+          
+        <div class="flex gap-4">
+          @foreach ($movies as $movie) 
+            <a href="/movie/{{ $movie->slug }}">  
+              <div class="group relative">
+                <img src="https://www.themoviedb.org/t/p/original/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class="h-98 w-full rounded-md object-cover object-center">
+                <div class="mt-3">
+                  <p class="text-sm text-white font-semibold text-gega-melon">{{ $movie->title }}</p>
+                  <p class="text-sm text-white text-gega-melon mt-2">{{ strftime('%e, %b %Y', strtotime($movie->release_date)) }}</p>
+                </div>
+              </div>
+            </a>
+          @endforeach
         </div>
-    </div>    
+      </div>
+    </div>
+        </div>
+    </div>         
+            <!-- More products... -->
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+  
 </section>
-
-<script src="js/script.js"></script>
-
+@endsection
 </body>
 </html>
-@endsection
