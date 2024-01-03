@@ -9,7 +9,7 @@
         @foreach ($movies as $movie)
             <!-- Item 1 -->
             <div class="hidden duration-900 ease-in-out" data-carousel-item>
-                <img src="https://www.themoviedb.org/t/p/original/{{ $movie->backdrop_path }}" alt="{{ $movie->title }}" class="absolute block w-full object-top object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  w-full object-cover object-top max-h-[450px] filter brightness-50" alt="...">
+                <img src="./asset/{{ $movie->backdrop_path }}" alt="{{ $movie->title }}" class="absolute block w-full object-top object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  w-full object-cover object-top max-h-[450px] filter brightness-50" alt="...">
                 <div class="absolute inset-0 flex items-center justify-center">
                     <div class="container p-10 text-white space-x-11 mt-[10%]">
                         <!-- Tambahkan margin atas di sini -->
@@ -73,12 +73,7 @@
               <div class="swiper-slide">
                   <a href="/movie/{{ $movie->slug }}" class="inline-block mx-4">
                       <div class="group relative p-4">
-                        @if(isset($movie->poster_path))
-                            <img src="{{ asset('storage/' . $movie->poster_path) }}" alt="{{ $movie->title }}" class="img-fluid">
-                        @else
-                            <img src="https://image.tmdb.org/t/p/w200/{{ $movie->poster_path }}" alt="{{ $movie->title }}">
-                        @endif
-
+                          <img src="./asset/{{ $movie->poster_path }}" alt="{{ $movie->title }}">
                           <div class="mt-3">
                               <p class="text-sm text-white font-semibold text-gega-melon">{{ $movie->title }}</p>
                               <p class="text-sm text-white text-gega-melon mt-2">{{ strftime('%e, %b %Y', strtotime($movie->release_date)) }}</p>
