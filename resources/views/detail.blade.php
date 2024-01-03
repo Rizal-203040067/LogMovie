@@ -8,7 +8,7 @@
 
   <!--Hero Image-->
 
-  <img src="https://www.themoviedb.org/t/p/original/{{ $movie->backdrop_path }}" alt="{{ $movie->title }}" class="w-full object-cover object-top max-h-[600px]">
+  <img src="./asset/{{ $movie->backdrop_path }}" alt="{{ $movie->title }}" class="w-full object-cover object-top max-h-[600px]">
 
   <!--Hero Content-->
   <div class="absolute bottom-0 w-full bg-gradient-to-b from-transparent to-black">
@@ -17,7 +17,7 @@
     
     <div class="container p-10 flex items-center">
     <div class="ml-[10%] mb-[10%] max-w-[15%] border-2 rounded-md group-hover:opacity-80 max-h-70 overflow-hidden">
-        <img src="https://www.themoviedb.org/t/p/original/{{ $movie->poster_path }}" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full rounded-lg">
+        <img src="./asset/{{ $movie->poster_path }}" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full rounded-lg">
       </div>
     
       <div class="pl-10 lg:pl-0 text-white space-x-11 mb-[6%]"> <!-- Tambahkan margin atas di sini -->
@@ -106,7 +106,7 @@
           @foreach ($movies as $movie) 
             <a href="/movie/{{ $movie->slug }}">  
               <div class="group relative">
-                <img src="https://www.themoviedb.org/t/p/original/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class="h-98 w-full rounded-md object-cover object-center">
+                <img src="./asset/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class="h-98 w-full rounded-md object-cover object-center">
                 <div class="mt-3">
                   <p class="text-sm text-white font-semibold text-gega-melon">{{ $movie->title }}</p>
                   <p class="text-sm text-white text-gega-melon mt-2">{{ strftime('%e, %b %Y', strtotime($movie->release_date)) }}</p>

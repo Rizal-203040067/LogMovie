@@ -38,7 +38,7 @@
   <main class="basis-9/12 grid grid-cols-4 gap-6">
     @foreach ($movies as $movie) 
     <a href="/movie/{{ $movie->slug }}" class="flex flex-col items-start card shadow-md rounded-b-lg">
-        <img class="rounded-t-lg" src="https://www.themoviedb.org/t/p/original/{{ $movie->poster_path }}" alt="{{ $movie->title }}">
+        <img class="rounded-t-lg" src="./asset/{{ $movie->poster_path }}" alt="{{ $movie->title }}">
         <div class="mx-4 my-2">
             <p class="text-sm text-white font-semibold text-gega-melon">{{ $movie->title }}</p>
             <p class="text-sm text-white text-gega-melon mt-2">{{ strftime('%e, %b %Y', strtotime($movie->release_date)) }}</p>
