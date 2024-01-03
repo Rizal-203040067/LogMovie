@@ -108,9 +108,9 @@ class DashboardController extends Controller
             $validatedData['backdrop_path'] = $request->file('backdrop_path')->store('movie_images');
         }
     
-        // Update data di dalam database
-        $movie->update($validatedData);
         
+        Movie::where('id', $movie->id)
+            ->update($validatedData);
         return redirect('/dashboard')->with('success', 'Film berhasil diperbarui.');
     }
     

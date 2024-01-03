@@ -73,12 +73,7 @@
               <div class="swiper-slide">
                   <a href="/movie/{{ $movie->slug }}" class="inline-block mx-4">
                       <div class="group relative p-4">
-                        @if(isset($movie->poster_path))
                             <img src="{{ asset('storage/' . $movie->poster_path) }}" alt="{{ $movie->title }}" class="img-fluid">
-                        @else
-                            <img src="https://image.tmdb.org/t/p/w200/{{ $movie->poster_path }}" alt="{{ $movie->title }}">
-                        @endif
-
                           <div class="mt-3">
                               <p class="text-sm text-white font-semibold text-gega-melon">{{ $movie->title }}</p>
                               <p class="text-sm text-white text-gega-melon mt-2">{{ strftime('%e, %b %Y', strtotime($movie->release_date)) }}</p>

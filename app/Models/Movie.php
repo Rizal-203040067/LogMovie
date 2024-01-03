@@ -15,7 +15,7 @@ class Movie extends Model
         'title', 'slug', 'overview', 'popularity', 'poster_path', 'backdrop_path', 'release_date', 'category_id'
     ];
 
-     protected $guarded = ['id'];
+    //  protected $guarded = ['id'];
 
     public function scopeFilter($query, array $filters){
         if (isset($filters['search']) ? $filters['search'] : false) {
