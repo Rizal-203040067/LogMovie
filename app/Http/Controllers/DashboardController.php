@@ -16,10 +16,6 @@ class DashboardController extends Controller
     public function index()
     {
         $movies = Movie::paginate(5);
-
-        // $userId = auth()->user()->id;
-        // // Menampilkan daftar film yang dimiliki oleh pengguna yang sedang login
-        // $movies = Movie::where('user_id', auth()->user()->id)->get();
         return view('dashboard.index', compact('movies'));
     }
 
@@ -27,10 +23,14 @@ class DashboardController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        // Tampilkan formulir untuk menambah film
-        return view('dashboard.create');
-    }
+{
+    // Tampilkan formulir untuk menambah film
+    return view('dashboard.create', [
+        'movies' => Movie::all(),
+        'categories' => Category::all(), // Change the semicolon to a comma
+    ]);
+}
+
 
     /**
      * Store a newly created resource in storage.
@@ -66,7 +66,6 @@ class DashboardController extends Controller
     public function show(Movie $movie) {
         return view('dashboard.show', [
             'movie' => $movie,
-            'categories' => $movie->category, // Jika relasinya sudah diatur dengan baik
         ]);
     }
     
@@ -111,7 +110,7 @@ class DashboardController extends Controller
     
         // Update data di dalam database
         $movie->update($validatedData);
-        return $validatedData;
+        
         return redirect('/dashboard')->with('success', 'Film berhasil diperbarui.');
     }
     

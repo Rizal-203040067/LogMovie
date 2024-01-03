@@ -58,9 +58,6 @@ Route::get('/movie', [MoviesController::class, 'sort'])->name('movies.sort');
 Route::get('/movie/{movie:slug}', [MoviesController::class, 'show'])->name('movies.show');
 
 
-//TMDB
-Route::get('/film', [TmdbController::class], 'index');
-Route::get('/film/{movie:slug}', [TmdbController::class], 'show');
 // routes/web.php
 Route::get('/actor/{actorId}', [ActorController::class], 'getActorInfo')->name('actors.index');;
 Route::get('/actor', [ActorController::class, 'getAllActors'])->name('actors.index');;
@@ -73,7 +70,8 @@ Route::get('/category', [CategoryController::class, 'show'])->name('movies.categ
 //dashboard
 // web.php
 // Route::get('/dashboard/checkSlug', [DashboardController::class, 'checkSlug'])->middleware('auth');
-// //Route::get('/dashboard/{movie:slug}/edit', [DashboardController::class, 'edit'])->name('dashboard.edit');
+Route::get('/dashboard/{movie:slug}/edit', [DashboardController::class, 'edit'])->name('dashboard.edit');
+Route::put('/dashboard', [DashboardController::class, 'update']);
 Route::resource('/dashboard', DashboardController::class)->middleware('auth');
 
 

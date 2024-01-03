@@ -29,11 +29,11 @@
             <div class="flex items-center justify-between">
               <!-- Current: "bg-emerald-900 text-white", Default: "text-emerald-300 hover:bg-emerald-700 hover:text-white" -->
               <a href='/'> <img src='https://i.postimg.cc/7C3qtLGn/Logmovie.png' class="w-[150px] mr-10" border='0' alt='Logmovie'></a>
-              <a href="/movie" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Movie</a>
-              <a href="/actor" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Actor</a>
+              <a href="/movie" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-m font-medium">Movie</a>
+              <a href="/actor" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-m font-medium">Actor</a>
               @auth
-              <div x-data="{ open: false }" class="relative ml-auto">
-                <button @click="open = !open" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium focus:outline-none">
+              <div x-data="{ open: false }" class="relative ml-[700px]">
+                <button @click="open = !open" class="text-emerald-300 hover:bg-emerald-700 hover:text-white rounded-md px-3 py-2 text-m font-medium focus:outline-none">
                     {{ Auth::user()->name }}
                 </button>
                 <ul x-show="open" class="absolute bg-white border rounded-md mt-2 text-gray-800">

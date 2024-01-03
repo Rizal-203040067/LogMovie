@@ -28,6 +28,6 @@ class ActorController extends Controller
         $client = new Client();
         $response = $client->get($url);
         $actorsData = json_decode($response->getBody(), true)['results'];
-        return view('your-view-name', ['movies' => $movies, 'actors' => $actorsData]);
+        return view('actor', ['actors' => $actorsData]);
         }
     }

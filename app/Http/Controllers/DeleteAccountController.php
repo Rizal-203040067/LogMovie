@@ -29,7 +29,7 @@ class DeleteAccountController extends Controller
         }
 
         // Hapus pengguna
-            $user->destroy();
+            $user->delete();
 
         return redirect('/')->with('accountDeleted', 'Your account has been deleted.');
     }
