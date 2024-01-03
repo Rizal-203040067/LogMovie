@@ -48,7 +48,7 @@
     <div class="swiper-slide">
       <a href="/movie/{{ $movie->slug }}" class="inline-block mx-4">
         <div class="group relative p-4">
-          <img src="https://www.themoviedb.org/t/p/original/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class="mr-2 rounded-md object-cover object-center">
+          <img src="./asset/{{ $movie->poster_path }}" alt="{{ $movie->title }}" class="mr-2 rounded-md object-cover object-center">
           <div class="mt-3">
             <p class="text-sm text-white font-semibold text-gega-melon">{{ $movie->title }}</p>
             <p class="text-sm text-white text-gega-melon mt-2">{{ strftime('%e, %b %Y', strtotime($movie->release_date)) }}</p>
